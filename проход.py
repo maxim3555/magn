@@ -207,11 +207,11 @@ def upload_process():
         #options.profile = profile_path
         # Укажите путь к geckodriver
         # Создайте сервис для geckodriver
-        service = Service(GeckoDriverManager().install())  # Автоматическая установка и управление версией драйвера
-
+        geckodriver_path = "geckodriver"  # Замените на путь к вашему geckodriver
         # Инициализируйте драйвер
-        driver = webdriver.Firefox(service=service, options=options)
-        # driver.maximize_window()
+        service = Service(geckodriver_path)
+
+        driver = webdriver.Firefox(service=service, options=options)        # driver.maximize_window()
         # time.sleep(20000)
 
         print('игра и взять ссылку')
