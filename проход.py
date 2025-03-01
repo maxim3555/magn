@@ -207,10 +207,9 @@ def upload_process():
         #options.add_argument("--headless")  # Запуск в безголовом режиме
         #options.profile = profile_path
         # Укажите путь к geckodriver
-        geckodriver_path = os.path.join(os.getcwd(), 'geckodriver')  # или полный путь к драйверу
 
         # Создайте сервис для geckodriver
-        service = Service(geckodriver_path)
+        service = Service('geckodriver')
 
         # Инициализируйте драйвер
         driver = webdriver.Firefox(service=service, options=options)
