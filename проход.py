@@ -206,7 +206,7 @@ def upload_process():
         # options.set_preference("platform.override", "android")
         #options.add_argument("--headless")  # Запуск в безголовом режиме
         #options.profile = profile_path
-        service = Service(GeckoDriverManager().install())
+        service = 'geckodriver'
 
         # driver = webdriver.Firefox(service=service)
         driver = webdriver.Firefox(service=service, options=options)
