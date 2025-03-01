@@ -206,10 +206,10 @@ def upload_process():
         # Укажите путь к geckodriver
 
         # Создайте сервис для geckodriver
-
+        service='geckodriver'
 
         # Инициализируйте драйвер
-        driver = webdriver.Firefox(options=options)
+        driver = webdriver.Firefox(service=service,options=options)
 
         # driver.maximize_window()
         # time.sleep(20000)
