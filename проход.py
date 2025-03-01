@@ -1,9 +1,7 @@
 import os
 import threading
 import time
-from selenium.webdriver.firefox.service import Service
 
-from webdriver_manager.firefox import GeckoDriverManager
 
 import threading
 import openpyxl
