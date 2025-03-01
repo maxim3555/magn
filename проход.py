@@ -192,7 +192,7 @@ def upload_process():
         from selenium import webdriver
         from selenium.webdriver.firefox.options import Options
         from fake_useragent import UserAgent
-
+        from webdriver_manager.firefox import GeckoDriverManager
         ua = UserAgent()
         random_user_agent = ua.random
         options = Options()
@@ -209,8 +209,7 @@ def upload_process():
         service = 'geckodriver'
 
         # driver = webdriver.Firefox(service=service)
-        driver = webdriver.Firefox(service=service, options=options)
-
+        driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(),options=options)
 
         # driver.maximize_window()
         # time.sleep(20000)
