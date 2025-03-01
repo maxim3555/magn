@@ -1,0 +1,16 @@
+name: Bot
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Запуск в 12:00
+    - cron: '0 0 * * *'    # Запуск в 00:00 (24:00 след. дня)
+jobs:
+  BOT:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install requirements
+        run: pip install -r requirements.txt
+      - name: Run app
+        run: python телеграмм_шар.py
+
