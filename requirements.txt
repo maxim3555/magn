@@ -21,3 +21,4 @@ urllib3==2.3.0
 websocket-client==1.8.0
 wsproto==1.2.0
 requests==2.32.3
+webdriver-manager==3.8.5
