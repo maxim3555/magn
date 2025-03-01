@@ -212,8 +212,7 @@ def upload_process():
 
 
         # Инициализируйте драйвер
-        driver = webdriver.Firefox(options=options)
-
+        driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=options)
         # driver.maximize_window()
         # time.sleep(20000)
 
