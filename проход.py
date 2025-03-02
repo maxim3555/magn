@@ -207,7 +207,7 @@ def upload_process():
         #options.profile = profile_path
         # Укажите путь к geckodriver
         # Создайте сервис для geckodriver
-        geckodriver_path = r"/geckodriver"  # Замените на путь к вашему geckodriver
+        geckodriver_path = r"geckodriver.exe"  # Замените на путь к вашему geckodriver
         # Инициализируйте драйвер
         service = Service(geckodriver_path)
 
