@@ -207,8 +207,7 @@ def upload_process():
         #options.profile = profile_path
         # Укажите путь к geckodriver
         # Создайте сервис для geckodriver
-        geckodriver_path = r"geckodriver-v0.36.0-linux-aarch64.tar.gz.asc"  # Замените на путь к вашему geckodriver
-        # Инициализируйте драйвер
+        geckodriver_path = r"./geckodriver"  # Если geckodriver находится в текущей директории        # Инициализируйте драйвер
         service = Service(geckodriver_path)
 
         driver = webdriver.Firefox(service=service, options=options)        # driver.maximize_window()
