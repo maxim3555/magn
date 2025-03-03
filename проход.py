@@ -203,14 +203,14 @@ def upload_process():
         options.set_preference("general.useragent.override", random_user_agent)  # Устанавливаем случайный User-Agent
         #options.set_preference("dom.webdriver.enabled", False)
         # options.set_preference("platform.override", "android")
-        #options.add_argument("--headless")  # Запуск в безголовом режиме
+        options.add_argument("--headless")  # Запуск в безголовом режиме
         #options.profile = profile_path
         # Укажите путь к geckodriver
         # Создайте сервис для geckodriver
-        geckodriver_path = r"./geckodriver"  # Если geckodriver находится в текущей директории        # Инициализируйте драйвер
-        service = Service(geckodriver_path)
+        # geckodriver_path = r"./geckodriver"  # Если geckodriver находится в текущей директории        # Инициализируйте драйвер
+        # service = Service(geckodriver_path)
 
-        driver = webdriver.Firefox(service=service, options=options)        # driver.maximize_window()
+        driver = webdriver.Firefox( options=options)        # driver.maximize_window()
         # time.sleep(20000)
 
         print('игра и взять ссылку')

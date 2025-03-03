@@ -1,39 +1,30 @@
-name: Python package
+name: bot
+on:
+    push:
 
-
-on: push
 jobs:
+    BOT:
+        runs-on: ubuntu-latest
 
-  build:
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
 
-    runs-on: ubuntu-latest
 
+            - name: Install geckodriver
+              run: |
+                # Удаляем старый geckodriver, если он есть
+                sudo rm /usr/bin/geckodriver || true
+                
+                # Скачиваем и устанавливаем geckodriver 0.36.0
+                wget https://github.com/mozilla/geckodriver/releases/download/v0.36.0/geckodriver-v0.36.0-linux64.tar.gz
+                tar -xzf geckodriver-v0.36.0-linux64.tar.gz
+                sudo mv geckodriver /usr/bin/
+                sudo chmod +x /usr/bin/geckodriver
 
-    steps:
+            - name: Install requirements
+              run: pip install -r requirements.txt
 
-    - uses: actions/checkout@v2
-
-    - name: Set up Python
-
-      uses: actions/setup-python@v2
-
-      with:
-
-        python-version: '3.10'  # Или другая версия
-
-    - name: Install dependencies
-
-      run: |
-        wget https://github.com/mozilla/geckodriver/releases/download/v0.36.0/geckodriver-v0.36.0-linux-aarch64.tar.gz
-
-        tar -xvzf geckodriver-v0.36.0-linux-aarch64.tar.gz
-        chmod +x geckodriver
-        pip install -r requirements.txt
-        python -m pip install --upgrade pip
-
-        pip install selenium webdriver-manager
-
-    - name: Run the script
-
-      run: python проход.py  # Укажите имя вашего скрипта
+            - name: Run app
+              run: python проход.py
