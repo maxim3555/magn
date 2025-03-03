@@ -190,7 +190,6 @@ def upload_process():
         from selenium import webdriver
         from selenium.webdriver.firefox.options import Options
         from fake_useragent import UserAgent
-        from webdriver_manager.firefox import GeckoDriverManager
         from selenium.webdriver.firefox.service import Service
         ua = UserAgent()
         random_user_agent = ua.random
