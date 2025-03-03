@@ -179,7 +179,9 @@ def regictracia(driver):
 
 
         search_element_Xpath(driver, '//*[@id="survey"]/div/div/form/div[2]/button[2]', 5)
-        time.sleep(5)
+        time.sleep(1)
+        driver.save_screenshot('111.png')
+        magnit_kupon('111.png')
     except Exception as e:
         print(f"An error occurred: {e}")
         # schet -= 1
