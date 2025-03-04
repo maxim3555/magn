@@ -244,5 +244,5 @@ while True:
 
          print("Скрипт был остановлен. Закрываю потоки...")
 
-    if schet ==13:
+    if schet ==12:
         schet=1
